@@ -5,18 +5,45 @@
 .logincadastro-txtfield {
     -fx-background-radius: 10;
     -fx-background-color: #3B364C; /* Define a cor de fundo */
-    -fx-prompt-text-fill: white; 
+    -fx-prompt-text-fill: #cccccc; 
+    -fx-text-fill: white;
 }
 
 .logincadastro-btn{
 	-fx-background-radius: 10;
     -fx-background-color: #8651E3; /* Define a cor de fundo */
-	 -fx-prompt-text-fill: white; 
+	-fx-text-fill: white; 
 }
 .painel-central {
     -fx-max-width: 1200px; /* largura máxima que você quer */
+    -fx-max-height: 680px;
     -fx-pref-width: 90%;   /* ocupar 90% da largura da tela */
     -fx-pref-height: 90%;  /* altura também pode ser relativa */
     -fx-background-color: transparent; /* ou qualquer cor de fundo */
 }
 
+.date-picker {
+    -fx-background-color: transparent;
+}
+
+.date-picker .text-field {
+    -fx-background-color: #3B364C;
+    -fx-text-fill: white;
+    -fx-font-size: 18px;
+    -fx-background-radius: 10;
+    -fx-border-color: transparent;
+    -fx-prompt-text-fill: #cccccc; 
+}
+
+.date-picker .arrow-button {
+    -fx-background-color: #5A526F;
+}
+
+.date-picker .arrow-button .arrow {
+    -fx-background-color: white;
+}
+
+.label-clickavel {
+    -fx-cursor: hand;
+   
+}

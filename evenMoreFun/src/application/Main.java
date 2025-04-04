@@ -13,7 +13,7 @@ public class Main extends Application {
         	
             // Carregar o arquivo FXML
         	
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/TelaTeste.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/TelaCadastro.fxml"));
             Parent root = loader.load();  // Carrega o layout definido no FXML
 
             // Configurar a cena com o layout FXML

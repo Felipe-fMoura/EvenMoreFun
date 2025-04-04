@@ -1,6 +1,8 @@
 module evenMoreFun {
     requires javafx.controls;
     requires javafx.fxml;
+	requires javafx.base;
+	requires jasypt;
     
     exports application;
     exports view;
