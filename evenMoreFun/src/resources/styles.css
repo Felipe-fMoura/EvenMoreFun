@@ -13,3 +13,10 @@
     -fx-background-color: #8651E3; /* Define a cor de fundo */
 	 -fx-prompt-text-fill: white; 
 }
+.painel-central {
+    -fx-max-width: 1200px; /* largura máxima que você quer */
+    -fx-pref-width: 90%;   /* ocupar 90% da largura da tela */
+    -fx-pref-height: 90%;  /* altura também pode ser relativa */
+    -fx-background-color: transparent; /* ou qualquer cor de fundo */
+}
+
