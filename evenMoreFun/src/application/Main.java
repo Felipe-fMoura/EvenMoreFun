@@ -1,5 +1,4 @@
 package application;
-
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -11,7 +10,9 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) {
         try {
+        	
             // Carregar o arquivo FXML
+        	
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/TelaTeste.fxml"));
             Parent root = loader.load();  // Carrega o layout definido no FXML
 
@@ -19,6 +20,7 @@ public class Main extends Application {
             Scene scene = new Scene(root, 400, 400);
             primaryStage.setScene(scene);
             primaryStage.setTitle("Tela Teste");
+            primaryStage.setMaximized(true);
             primaryStage.show();
         } catch (Exception e) {
             e.printStackTrace();
@@ -26,6 +28,7 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) {
+    	
         launch(args);
     }
 }

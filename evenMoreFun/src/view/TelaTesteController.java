@@ -9,12 +9,12 @@ public class TelaTesteController {
 
     @FXML
     private void initialize() {
-        if (btnTeste != null) {
-            btnTeste.setOnAction(event -> {
-                System.out.println("Botão clicado!");
-            });
-        } else {
-            System.err.println("Erro: btnTeste não foi injetado!");
-        }
+       // if (btnTeste != null) {
+         //   btnTeste.setOnAction(event -> {
+         //       System.out.println("Botão clicado!");
+        //    });
+        //} else {
+       //     System.err.println("Erro: btnTeste não foi injetado!");
+       // }
     }
 }

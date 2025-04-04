@@ -1,0 +1,15 @@
+#telaCadastro {
+    -fx-background-color: #625D73;  /* JavaFX */
+    
+}
+.logincadastro-txtfield {
+    -fx-background-radius: 10;
+    -fx-background-color: #3B364C; /* Define a cor de fundo */
+    -fx-prompt-text-fill: white; 
+}
+
+.logincadastro-btn{
+	-fx-background-radius: 10;
+    -fx-background-color: #8651E3; /* Define a cor de fundo */
+	 -fx-prompt-text-fill: white; 
+}
