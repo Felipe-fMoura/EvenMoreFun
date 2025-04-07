@@ -13,13 +13,13 @@ public class Main extends Application {
         	
             // Carregar o arquivo FXML
         	
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/TelaTeste.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/TelaCadastro.fxml"));
             Parent root = loader.load();  // Carrega o layout definido no FXML
 
             // Configurar a cena com o layout FXML
             Scene scene = new Scene(root, 400, 400);
             primaryStage.setScene(scene);
-            primaryStage.setTitle("Tela Teste");
+            primaryStage.setTitle("Tela Cadastro");
             primaryStage.setMaximized(true);
             primaryStage.show();
         } catch (Exception e) {
