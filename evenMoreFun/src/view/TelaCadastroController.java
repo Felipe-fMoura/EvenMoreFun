@@ -4,13 +4,19 @@ import service.UsuarioService;
 import org.jasypt.util.password.BasicPasswordEncryptor;
 import org.jasypt.util.text.BasicTextEncryptor;
 
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.List;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 import model.Usuario;
 import service.UsuarioService;
 
@@ -46,7 +52,7 @@ public class TelaCadastroController {
   
   
   @FXML
-  private void onBtCadastrarUsuario() {
+  private void onBtCadastrarUsuario(ActionEvent event) {
 	  
 	  		String nome = txtNome.getText();
 	  		String sobrenome = txtSobrenome.getText();
@@ -67,6 +73,16 @@ public class TelaCadastroController {
 			if (sucesso){
 				a.mostrarAlerta("Sucesso", "Usuário cadastrado com sucesso, Bem vindo!!");
 				System.out.println("Usuario cadastrado");
+				
+				try {
+	                Parent loginRoot = FXMLLoader.load(getClass().getResource("/view/TelaLogin.fxml"));
+	                Scene loginScene = new Scene(loginRoot);
+	                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+	                stage.setScene(loginScene);
+	                stage.show();
+	            } catch (IOException e) {
+	                e.printStackTrace();
+	            }
 				
 				
 			} else {
