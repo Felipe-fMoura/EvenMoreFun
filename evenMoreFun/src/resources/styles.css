@@ -43,8 +43,12 @@
 .date-picker .arrow-button .arrow {
     -fx-background-color: white;
 }
-
 .label-clickavel {
     -fx-cursor: hand;
    
 }
+
+/*.label-clickavel {
+    -fx-cursor: hand;
+   
+} */
