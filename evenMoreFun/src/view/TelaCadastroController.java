@@ -68,6 +68,7 @@ public class TelaCadastroController {
 				a.mostrarAlerta("Sucesso", "Usuário cadastrado com sucesso, Bem vindo!!");
 				System.out.println("Usuario cadastrado");
 				
+				
 			} else {
 				System.out.println("Erro Email ja cadastrado");
 				a.mostrarAlerta("Erro de Cadastro", "Email já cadastrado. Tente novamente");

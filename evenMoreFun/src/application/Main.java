@@ -19,7 +19,7 @@ public class Main extends Application {
             // Configurar a cena com o layout FXML
             Scene scene = new Scene(root, 400, 400);
             primaryStage.setScene(scene);
-            primaryStage.setTitle("Tela Teste");
+            primaryStage.setTitle("Tela Cadastro");
             primaryStage.setMaximized(true);
             primaryStage.show();
         } catch (Exception e) {

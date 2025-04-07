@@ -5,15 +5,7 @@ import java.util.List;
 import model.Usuario;
 
 public class UsuarioService {
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	
 	private List<Usuario> listaUsuarios = new ArrayList<>();
 	
@@ -44,8 +36,18 @@ public class UsuarioService {
 	}
 
 	public boolean validarEmail(String email) {
-	    return email.contains("@") && email.endsWith(".com");
+	    return email.contains("@") && email.endsWith(".com");//adicionar mais 
 	}
+	
+	public boolean fazerLogin(String email, String senha) {
+		for (Usuario u : listaUsuarios) {
+			if (u.getEmail().equalsIgnoreCase(email) && u.getSenha().equals(senha)) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
 	
 	
 }
