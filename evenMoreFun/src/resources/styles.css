@@ -4,14 +4,17 @@
 }
 .logincadastro-txtfield {
     -fx-background-radius: 10;
-    -fx-background-color: #3B364C; /* Define a cor de fundo */
+    -fx-background-color: linear-gradient(to right, #9400D3, #4B0082);
+    
+     /* Define a cor de fundo */
     -fx-prompt-text-fill: #cccccc; 
     -fx-text-fill: white;
 }
 
+
 .logincadastro-btn{
 	-fx-background-radius: 10;
-    -fx-background-color: #8651E3; /* Define a cor de fundo */
+    -fx-background-color: linear-gradient(to right, #9400D3, #4B0082);
 	-fx-text-fill: white; 
 }
 .painel-central {
