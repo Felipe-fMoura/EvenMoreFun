@@ -15,6 +15,7 @@
 	-fx-text-fill: white; 
 }
 .painel-central {
+	-fx-max-height: 680px; /* largura máxima que você quer */
     -fx-max-width: 1200px; /* largura máxima que você quer */
     -fx-max-height: 680px;
     -fx-pref-width: 90%;   /* ocupar 90% da largura da tela */
@@ -42,8 +43,8 @@
 .date-picker .arrow-button .arrow {
     -fx-background-color: white;
 }
-
 .label-clickavel {
     -fx-cursor: hand;
    
 }
+
