@@ -22,8 +22,8 @@ import service.UsuarioService;
 
 public class TelaCadastroController {
 
-	 private UsuarioService usuarioService = new UsuarioService();
-	 BasicPasswordEncryptor PasswordEncryptor = new BasicPasswordEncryptor();
+	 private UsuarioService usuarioService = UsuarioService.getInstance();
+
 	
 	 
   @FXML
@@ -57,7 +57,7 @@ public class TelaCadastroController {
 	  		String nome = txtNome.getText();
 	  		String sobrenome = txtSobrenome.getText();
 			String email = txtEmail.getText();
-			String senha= PasswordEncryptor.encryptPassword(txtSenha.getText());		
+			String senha = txtSenha.getText();	
 			LocalDate dataNasc= txtDataNascimento.getValue();
 			System.out.println(""+nome+" "+sobrenome+"\n"+email);
 			
@@ -72,9 +72,10 @@ public class TelaCadastroController {
 
 			if (sucesso){
 				a.mostrarAlerta("Sucesso", "Usuário cadastrado com sucesso, Bem vindo!!");
-				System.out.println("Usuario cadastrado");
+				System.out.println("Usuario cadastrado, SENHA É " +senha);
 				
 				try {
+					//Exibindo a outra tela
 	                Parent loginRoot = FXMLLoader.load(getClass().getResource("/view/TelaLogin.fxml"));
 	                Scene loginScene = new Scene(loginRoot);
 	                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -86,7 +87,7 @@ public class TelaCadastroController {
 				
 				
 			} else {
-				System.out.println("Erro Email ja cadastrado");
+				System.out.println("Erro Email ja cadastrado"); //tirar
 				a.mostrarAlerta("Erro de Cadastro", "Email já cadastrado. Tente novamente");
 			}
 			} else {
@@ -99,6 +100,7 @@ public class TelaCadastroController {
 				
   }
 
+  //tirar
   @FXML
   public void onBtListaUsuarios() {
 	  
