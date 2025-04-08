@@ -3,7 +3,6 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -16,15 +15,15 @@
 
 <StackPane fx:id="telaCadastro" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" stylesheets="@../resources/styles.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.TelaCadastroController">
    <children>
+      <Rectangle fx:id="retanguloFundoCadastro" arcHeight="20.0" arcWidth="20.0" fill="#2b2638" height="757.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1154.0" />
      <!-- oque centraliza o anchorpane é o Stackpane.all -->  <AnchorPane fx:id="AnchorPane" styleClass="painel-central" StackPane.alignment="CENTER">  
          <children>
-            <Rectangle fx:id="retanguloFundoCadastro" arcHeight="20.0" arcWidth="20.0" fill="#2b2638" height="680.0" layoutX="8.0" layoutY="7.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1154.0" />
-            <ImageView fitHeight="665.0" fitWidth="536.0" layoutX="16.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="816.0" fitWidth="1393.0" layoutX="6.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../resources/frame%20(2).png" />
+                  <Image url="@../resources/Frame%203.png" />
                </image>
             </ImageView>
-            <TextField fx:id="txtEmail" layoutX="577.0" layoutY="276.0" prefHeight="56.0" prefWidth="547.0" promptText="Email" styleClass="logincadastro-txtfield">
+            <TextField fx:id="txtEmail" layoutX="645.0" layoutY="409.0" prefHeight="56.0" prefWidth="475.0" promptText="Email" styleClass="logincadastro-txtfield">
                <font>
                   <Font name="Segoe UI" size="18.0" />
                </font>
@@ -41,7 +40,7 @@
                   <Font name="MS Reference Sans Serif" size="18.0" />
                </font>
             </Text>
-            <TextField fx:id="txtNome" layoutX="577.0" layoutY="196.0" prefHeight="56.0" prefWidth="262.0" promptText="Nome" styleClass="logincadastro-txtfield">
+            <TextField fx:id="txtNome" layoutX="645.0" layoutY="304.0" prefHeight="56.0" prefWidth="475.0" promptText="Usuário" styleClass="logincadastro-txtfield">
                <font>
                   <Font name="Segoe UI" size="18.0" />
                </font>
@@ -49,23 +48,11 @@
                   <Insets />
                </opaqueInsets>
             </TextField>
-            <TextField fx:id="txtSobrenome" layoutX="863.0" layoutY="196.0" prefHeight="56.0" prefWidth="262.0" promptText="Sobrenome" styleClass="logincadastro-txtfield">
-               <font>
-                  <Font name="Segoe UI" size="18.0" />
-               </font>
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-            </TextField>
-            <PasswordField fx:id="txtSenha" layoutX="577.0" layoutY="354.0" prefHeight="56.0" prefWidth="547.0" promptText="Digite sua senha" styleClass="logincadastro-txtfield">
+            <PasswordField fx:id="txtSenha" layoutX="645.0" layoutY="516.0" prefHeight="56.0" prefWidth="475.0" promptText="Digite sua senha" styleClass="logincadastro-txtfield">
                <font>
                   <Font size="18.0" />
                </font></PasswordField>
-            <PasswordField fx:id="txtVerificarSenha" layoutX="577.0" layoutY="429.0" prefHeight="56.0" prefWidth="547.0" promptText="Repita sua senha" styleClass="logincadastro-txtfield">
-               <font>
-                  <Font size="18.0" />
-               </font></PasswordField>
-            <Button fx:id="btnConfirma" layoutX="681.0" layoutY="588.0" mnemonicParsing="false" onAction="#onBtCadastrarUsuario" prefHeight="49.0" prefWidth="339.0" styleClass="logincadastro-btn" text="Criar conta" textFill="WHITE">
+            <Button fx:id="btnConfirma" layoutX="713.0" layoutY="674.0" mnemonicParsing="false" onAction="#onBtCadastrarUsuario" prefHeight="49.0" prefWidth="339.0" styleClass="logincadastro-btn" text="CADASTRAR" textFill="WHITE">
                <font>
                   <Font name="Segoe UI" size="18.0" />
                </font>
@@ -73,8 +60,6 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="btListaUsuarios" layoutX="593.0" layoutY="600.0" mnemonicParsing="false" onAction="#onBtListaUsuarios" text="Button" />
-            <DatePicker fx:id="txtDataNascimento" layoutX="577.0" layoutY="507.0" prefHeight="56.0" prefWidth="547.0" promptText="Data de nascimento" styleClass="date-picker" />
          </children>
       </AnchorPane>
    </children>
