@@ -4,20 +4,26 @@ import service.UsuarioService;
 import org.jasypt.util.password.BasicPasswordEncryptor;
 import org.jasypt.util.text.BasicTextEncryptor;
 
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.List;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 import model.Usuario;
 import service.UsuarioService;
 
 public class TelaCadastroController {
 
-	 private UsuarioService usuarioService = new UsuarioService();
-	 BasicPasswordEncryptor PasswordEncryptor = new BasicPasswordEncryptor();
+	 private UsuarioService usuarioService = UsuarioService.getInstance();
+
 	
 	 
   @FXML
@@ -46,12 +52,12 @@ public class TelaCadastroController {
   
   
   @FXML
-  private void onBtCadastrarUsuario() {
+  private void onBtCadastrarUsuario(ActionEvent event) {
 	  
 	  		String nome = txtNome.getText();
 	  		String sobrenome = txtSobrenome.getText();
 			String email = txtEmail.getText();
-			String senha= PasswordEncryptor.encryptPassword(txtSenha.getText());		
+			String senha = txtSenha.getText();	
 			LocalDate dataNasc= txtDataNascimento.getValue();
 			System.out.println(""+nome+" "+sobrenome+"\n"+email);
 			
@@ -66,11 +72,22 @@ public class TelaCadastroController {
 
 			if (sucesso){
 				a.mostrarAlerta("Sucesso", "Usuário cadastrado com sucesso, Bem vindo!!");
-				System.out.println("Usuario cadastrado");
+				System.out.println("Usuario cadastrado, SENHA É " +senha);
+				
+				try {
+					//Exibindo a outra tela
+	                Parent loginRoot = FXMLLoader.load(getClass().getResource("/view/TelaLogin.fxml"));
+	                Scene loginScene = new Scene(loginRoot);
+	                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+	                stage.setScene(loginScene);
+	                stage.show();
+	            } catch (IOException e) {
+	                e.printStackTrace();
+	            }
 				
 				
 			} else {
-				System.out.println("Erro Email ja cadastrado");
+				System.out.println("Erro Email ja cadastrado"); //tirar
 				a.mostrarAlerta("Erro de Cadastro", "Email já cadastrado. Tente novamente");
 			}
 			} else {
@@ -83,6 +100,7 @@ public class TelaCadastroController {
 				
   }
 
+  //tirar
   @FXML
   public void onBtListaUsuarios() {
 	  
