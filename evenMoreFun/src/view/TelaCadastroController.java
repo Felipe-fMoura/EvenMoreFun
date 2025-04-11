@@ -27,7 +27,7 @@ public class TelaCadastroController {
 	
 	 
   @FXML
-  private TextField txtNome;
+  private TextField txtUsername;
   
   @FXML
   private TextField txtSobrenome;
@@ -51,54 +51,52 @@ public class TelaCadastroController {
   private Button btListaUsuarios;
   
   
+ 
   @FXML
-  private void onBtCadastrarUsuario(ActionEvent event) {
-	  
-	  		String nome = txtNome.getText();
-	  		String sobrenome = txtSobrenome.getText();
-			String email = txtEmail.getText();
-			String senha = txtSenha.getText();	
-			LocalDate dataNasc= txtDataNascimento.getValue();
-			System.out.println(""+nome+" "+sobrenome+"\n"+email);
-			
-			Usuario novo = new Usuario(nome, sobrenome, email, senha, dataNasc);
-			boolean emailValido = usuarioService.validarEmail(email);
-			Alertas a = new Alertas();
-			
-			
-			
-			if(emailValido) {
-				boolean sucesso = usuarioService.cadastrar(novo);
+private void onBtCadastrarUsuario(ActionEvent event) {
+    String userName = txtUsername.getText();
+    String email = txtEmail.getText();
+    String senha = txtSenha.getText();				
 
-			if (sucesso){
-				a.mostrarAlerta("Sucesso", "Usuário cadastrado com sucesso, Bem vindo!!");
-				System.out.println("Usuario cadastrado, SENHA É " +senha);
-				
-				try {
-					//Exibindo a outra tela
-	                Parent loginRoot = FXMLLoader.load(getClass().getResource("/view/TelaLogin.fxml"));
-	                Scene loginScene = new Scene(loginRoot);
-	                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-	                stage.setScene(loginScene);
-	                stage.show();
-	            } catch (IOException e) {
-	                e.printStackTrace();
-	            }
-				
-				
-			} else {
-				System.out.println("Erro Email ja cadastrado"); //tirar
-				a.mostrarAlerta("Erro de Cadastro", "Email já cadastrado. Tente novamente");
-			}
-			} else {
-				
-				
-				a.mostrarAlerta("Erro de Cadastro", "Email inválido. Tente novamente");
-				
-			}
-				
-				
-  }
+    Alertas a = new Alertas();
+
+    boolean emailValido = usuarioService.validarEmail(email);
+    if (!emailValido) {
+        a.mostrarAlerta("Erro de Cadastro", "Email inválido. Tente novamente");
+        return;
+    }
+
+    // Verifica se já existe email
+    for (Usuario u : usuarioService.getUsuarios()) {
+        if (u.getEmail().equalsIgnoreCase(email)) {
+            a.mostrarAlerta("Erro de Cadastro", "Email já cadastrado. Tente novamente");
+            return;
+        }
+    }
+
+    // Cria o objeto usuário com os dados da primeira tela
+    Usuario novo = new Usuario(userName, email, senha);
+
+    try {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/TelaCadastro2.fxml"));
+        Parent root = loader.load();
+
+        // Pega o controller da segunda tela
+        TelaCadastro2Controller controller = loader.getController();
+
+        // Envia o usuário para a próxima tela
+        controller.setUsuario(novo);
+
+        // Troca de tela
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.show();
+
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+}
+
 
   //tirar
   @FXML

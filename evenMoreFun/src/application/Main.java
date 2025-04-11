@@ -16,7 +16,6 @@ public class Main extends Application {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/TelaCadastro.fxml"));
             Parent root = loader.load();  // Carrega o layout definido no FXML
 
-            // Amo maes solteiras
             
             // Configurar a cena com o layout FXML
             Scene scene = new Scene(root, 400, 400);

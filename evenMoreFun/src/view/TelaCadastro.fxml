@@ -40,7 +40,7 @@
                   <Font name="MS Reference Sans Serif" size="18.0" />
                </font>
             </Text>
-            <TextField fx:id="txtNome" layoutX="645.0" layoutY="304.0" prefHeight="56.0" prefWidth="475.0" promptText="Usuário" styleClass="logincadastro-txtfield">
+            <TextField fx:id="txtUsername" layoutX="645.0" layoutY="304.0" prefHeight="56.0" prefWidth="475.0" promptText="Usuário" styleClass="logincadastro-txtfield">
                <font>
                   <Font name="Segoe UI" size="18.0" />
                </font>
