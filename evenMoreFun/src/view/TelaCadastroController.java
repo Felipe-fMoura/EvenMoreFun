@@ -50,16 +50,27 @@ public class TelaCadastroController {
   @FXML
   private Button btListaUsuarios;
   
+  @FXML
+ private TextField txtRepitirSenha; 
   
- 
   @FXML
 private void onBtCadastrarUsuario(ActionEvent event) {
     String userName = txtUsername.getText();
     String email = txtEmail.getText();
     String senha = txtSenha.getText();				
+    String confirmarSenha = txtRepitirSenha.getText(); // ou txtRepitirSenha
 
     Alertas a = new Alertas();
 
+    if (!senha.equals(confirmarSenha)) {
+        a.mostrarAlerta("Erro de Cadastro", "As senhas não coincidem. Tente novamente.");
+        return;
+    }
+
+    
+    
+    
+    
     boolean emailValido = usuarioService.validarEmail(email);
     if (!emailValido) {
         a.mostrarAlerta("Erro de Cadastro", "Email inválido. Tente novamente");

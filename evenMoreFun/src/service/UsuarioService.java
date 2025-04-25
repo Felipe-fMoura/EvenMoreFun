@@ -65,4 +65,8 @@ public class UsuarioService {
                                " | Hash: " + u.getSenha());
         }
     }
+    
+    
+    
+    
 }

@@ -60,6 +60,11 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
+            <PasswordField fx:id="txtRepitirSenha" layoutX="645.0" layoutY="592.0" prefHeight="56.0" prefWidth="475.0" promptText="Repita sua senha" styleClass="logincadastro-txtfield">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </PasswordField>
          </children>
       </AnchorPane>
    </children>
